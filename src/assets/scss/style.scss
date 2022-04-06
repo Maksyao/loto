@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+@import 'variables';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFontF;
+}
+
+.Layout {
+    height: 100vh;
+    background-color: $layoutColor;
+    padding: 0 12px;
+    padding-top: 17px;
+}
+
+.Button {
+    padding: $buttonPadding;
+    border: $buttonBorder;
+    border-radius: $buttonBorderRadius;
+    margin: 24px;
+    width: fit-content;
+    align-self: center;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $containerBGColor;
+    padding: $containerPadding;
+    border-radius: $containerBorderRadius;
+
+    h1 {
+        @include h1Font;
+    }
+
+    p {
+        @include pFont;
+        margin-top: 16px;
+        margin-bottom: 8px;
+
+        span {
+            font-weight: 300;
+        }
+    }
+
+    section {
+        @include pFont;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .numberButton {
+            border: $numberBorder;
+            border-radius: $numberBorderRadius;
+            width: $nuberSizes;
+            height: $nuberSizes;
+            text-align: center;
+            line-height: $nuberSizes;
+            cursor: pointer;
+            transition: all ease 300ms;
+        }
+
+        .selected{
+            background-color: $selectedNumber;
+            transform: scale(0.9);
+            
+        }
+    }
+}
